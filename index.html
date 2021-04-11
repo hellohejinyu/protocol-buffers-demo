@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>websocket test</title>
+</head>
+
+<body>
+  <h1>select method</h1>
+  <button onclick="connect()">连接</button>
+  <button onclick="disconnect()">断开</button>
+  <h1>send</h1>
+  <input id="message" type="text" value="Hello, world!">
+  <button onclick="send()">Send Message</button>
+  <h1>receive</h1>
+  <input id="receive" readonly>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/socket.io-client@4.0.1/dist/socket.io.js"></script>
+<script type="text/javascript">
+let socket
+const connect = () => {
+  socket = io();
+  console.log('connect')
+}
+
+const send = () => {
+  socket.emit('chat message', document.getElementById('message').value);
+}
+
+</script>
+
+</html>

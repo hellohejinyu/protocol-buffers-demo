@@ -1,0 +1,13 @@
+syntax = "proto3";
+ 
+import "define.proto";
+
+message MatchStockResp {
+    ErrorCode errorCode = 1;
+    repeated MatchStock stock = 2;
+}
+ 
+message MatchStock {
+    string stockLabel = 1;
+    string stockName = 2;
+}
